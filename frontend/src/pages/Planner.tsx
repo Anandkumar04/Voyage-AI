@@ -9,6 +9,8 @@ import { useAppStore } from '../store';
 import { toast } from '../store/toastStore';
 import { Trip } from '../types';
 import { useSEO } from '../hooks/useSEO';
+const API_BASE_URL = import.meta.env.VITE_API_URL;
+
 
 const loadingSteps = [
   { icon: MapPin, text: 'Analyzing destination highlights...' },
