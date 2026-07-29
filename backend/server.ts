@@ -4,7 +4,7 @@ dotenv.config();
 import path from "path";
 import { createServer as createViteServer } from "vite";
 import { GoogleGenAI } from "@google/genai";
-import { connectToMongoDB, getDBStatus, TripModel, UserModel } from "./Db.js";
+import { connectToMongoDB, getDBStatus, TripModel, UserModel } from "./db.js";
 
 async function startServer() {
   const app = express();
