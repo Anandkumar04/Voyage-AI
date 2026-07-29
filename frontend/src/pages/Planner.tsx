@@ -123,10 +123,12 @@ export default function Planner() {
     setIsLoading(true);
     setLoadingStep(0);
     try {
-      const response = await fetch('/api/plan-trip', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(currentFormData)
+      const response = await fetch(`${API_BASE_URL}/api/plan-trip`, {
+      method: 'POST',
+      headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(currentFormData),
       });
       
       const itinerary = await response.json();
