@@ -1,6 +1,7 @@
 import express from "express";
 import dotenv from "dotenv";
 dotenv.config();
+import cors from "cors";
 import path from "path";
 import { createServer as createViteServer } from "vite";
 import { GoogleGenAI } from "@google/genai";
@@ -9,6 +10,15 @@ import { connectToMongoDB, getDBStatus, TripModel, UserModel } from "./db.js";
 async function startServer() {
   const app = express();
   const PORT = 3000;
+
+    app.use(cors({
+    origin: [
+      "https://mynexttrip-ai.vercel.app",
+      "http://localhost:3000"
+    ],
+      methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+      credentials: true
+    }));
 
   app.use(express.json());
 
