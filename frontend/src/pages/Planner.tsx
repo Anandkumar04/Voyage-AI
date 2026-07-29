@@ -143,13 +143,13 @@ export default function Planner() {
 };
 
 // Save trip to MongoDB
-    await fetch("/api/trips", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(newTrip),
-    });
+    await fetch(`${API_BASE_URL}/api/trips`, {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json",
+  },
+  body: JSON.stringify(newTrip),
+});
 
     addTrip(newTrip);
     setCurrentTrip(newTrip);
