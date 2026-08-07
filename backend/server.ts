@@ -14,6 +14,7 @@ async function startServer() {
     app.use(cors({
     origin: [
       "https://mynexttrip-ai.vercel.app",
+      "https://voyagenext.vercel.app",
       "http://localhost:3000"
     ],
       methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
